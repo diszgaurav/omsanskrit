@@ -1,3 +1,24 @@
-<p>
-  akshhar works!
-</p>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-sm-2 mt-3">
+      <button class="btn btn-outline-dark mr-3 mb-3" (click)="showCategory('all')">All</button>
+      <button class="btn btn-outline-dark mr-3 mb-3" (click)="showCategory('anunasik')">Nasal</button>
+      <button class="btn btn-outline-dark mr-3 mb-3" (click)="showCategory('mradu')">Soft</button>
+      <button class="btn btn-outline-dark mr-3 mb-3" (click)="showCategory('kathor')">Hard</button>
+    </div>
+    <div class="col-sm-8 mt-3 text-right">
+      <table class="table table-responsive table-sm">
+        <tr *ngFor="let category of getCategories()">
+          <td>
+            <p class="text-muted small">{{categories[category]['name']}} <span class="small">{{category}}</span></p>
+          </td>
+          <td *ngFor="let akshhar of categories[category]['akshhar']">
+            <span class="btn">
+              {{akshhars[akshhar]}} <br/><span class="text-muted small">{{akshhar}}</span>
+            </span>
+          </td>
+        </tr>
+      </table>
+      </div>
+  </div>
+</div>
